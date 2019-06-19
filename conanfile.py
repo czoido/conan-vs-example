@@ -55,5 +55,7 @@ class ConanvsexampleConan(ConanFile):
     def package_info(self):
         if self.options.shared == False:
             self.cpp_info.libs = ["mydemolib"]
+            self.cpp_info.defines = ["LINK_STATIC_LIB"]
         else:
             self.cpp_info.libs = ["mydemodynlib"]
+            self.cpp_info.defines = ["LINK_DYNAMIC_LIB"]

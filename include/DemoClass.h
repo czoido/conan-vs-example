@@ -2,12 +2,12 @@
 
 #include <string>
 
-#ifdef _USRDLL
+#if defined(_USRDLL)
 	#define DLLEXPORT __declspec(dllexport)
 #else
-	#ifdef _LIB
+	#if defined(_LIB) || defined(LINK_STATIC_LIB)
 		#define DLLEXPORT
-	#else
+	#elif defined(LINK_DYNAMIC_LIB)
 		#define DLLEXPORT __declspec(dllimport)
 	#endif
 #endif
