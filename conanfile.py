@@ -1,3 +1,4 @@
+import os
 from conans import ConanFile, MSBuild, tools
 
 
@@ -16,10 +17,14 @@ class ConanvsexampleConan(ConanFile):
     description = "Just a simple example of using Conan to package a VS lib"
     topics = ("conan", "libs", "vs")
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False]}
+    options = {"shared": [True, False],
+               "fPIC": [True, False]}
     default_options = "shared=False"
-    generators = "cmake"
     _source_subfolder = scm.get("subfolder")
+
+    def configure(self):
+        if self.settings.compiler == "Visual Studio":
+            del self.options.fPIC
 
     def source(self):
         git = tools.Git()
@@ -31,9 +36,18 @@ class ConanvsexampleConan(ConanFile):
         msbuild.build("conan-vs-example.sln")
 
     def package(self):
-        self.copy("*.h", dst="include", src="hello")
-        self.copy("*.lib", dst="lib", keep_path=False)
-        self.copy("*.dll", dst="bin", keep_path=False)
+        self._lib_path = ""
+
+        if self.settings.arch == "x86_64":
+            self._lib_path = os.path.join("x64", str(self.settings.build_type))
+        elif self.settings.arch == "x86":
+            self._lib_path = os.path.join(str(self.settings.build_type))
+
+        print(self._lib_path)
+        self.copy("*.h", dst="include",
+                  src=os.path.join(self._source_subfolder, "include"))
+        self.copy("*.lib", dst="lib", src=self._lib_path, keep_path=False)
+        self.copy("*.dll", dst="bin", src=self._lib_path, keep_path=False)
 
     def package_info(self):
         self.cpp_info.libs = ["mydemolib"]
