@@ -1,4 +1,4 @@
-from conans import ConanFile, CMake, tools
+from conans import ConanFile, MSBuild, tools
 
 
 class ConanvsexampleConan(ConanFile):
@@ -19,12 +19,12 @@ class ConanvsexampleConan(ConanFile):
     options = {"shared": [True, False]}
     default_options = "shared=False"
     generators = "cmake"
-	_source_subfolder = scm.subfolder;
+    _source_subfolder = scm.get("subfolder")
 
     def source(self):
         git = tools.Git()
-        git.clone(self.scm.url, branch="master")
-        git.checkout(self.scm.revision)
+        git.clone(self.scm.get("url"), branch="master")
+        git.checkout(self.scm.get("revision"))
 
     def build(self):
         msbuild = MSBuild(self)
@@ -37,4 +37,3 @@ class ConanvsexampleConan(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = ["mydemolib"]
-
