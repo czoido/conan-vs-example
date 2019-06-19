@@ -21,7 +21,7 @@
     <ClInclude Include="targetver.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="DemoClass.h">
+    <ClInclude Include="..\include\DemoClass.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="DemoClass.cpp">
+    <ClCompile Include="..\sources\DemoClass.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

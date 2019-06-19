@@ -21,8 +21,8 @@
     <ClInclude Include="targetver.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\static-lib\DemoClass.h">
-      <Filter>Archivos de origen</Filter>
+    <ClInclude Include="..\include\DemoClass.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -32,7 +32,7 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\static-lib\DemoClass.cpp">
+    <ClCompile Include="..\sources\DemoClass.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
