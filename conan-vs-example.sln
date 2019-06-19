@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dynamic-lib", "dynamic-lib\dynamic-lib.vcxproj", "{FB21B7B6-5B57-48B6-A611-2ACEE2B810AA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "static-lib", "static-lib\static-lib.vcxproj", "{F23CF525-E2E5-4154-9F48-01830E14F34E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E1363F4-1C04-4195-A794-600F44C2CD19}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		conanfile.py = conanfile.py
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB21B7B6-5B57-48B6-A611-2ACEE2B810AA}.Debug|x64.ActiveCfg = Debug|x64
+		{FB21B7B6-5B57-48B6-A611-2ACEE2B810AA}.Debug|x64.Build.0 = Debug|x64
+		{FB21B7B6-5B57-48B6-A611-2ACEE2B810AA}.Debug|x86.ActiveCfg = Debug|Win32
+		{FB21B7B6-5B57-48B6-A611-2ACEE2B810AA}.Debug|x86.Build.0 = Debug|Win32
+		{FB21B7B6-5B57-48B6-A611-2ACEE2B810AA}.Release|x64.ActiveCfg = Release|x64
+		{FB21B7B6-5B57-48B6-A611-2ACEE2B810AA}.Release|x64.Build.0 = Release|x64
+		{FB21B7B6-5B57-48B6-A611-2ACEE2B810AA}.Release|x86.ActiveCfg = Release|Win32
+		{FB21B7B6-5B57-48B6-A611-2ACEE2B810AA}.Release|x86.Build.0 = Release|Win32
+		{F23CF525-E2E5-4154-9F48-01830E14F34E}.Debug|x64.ActiveCfg = Debug|x64
+		{F23CF525-E2E5-4154-9F48-01830E14F34E}.Debug|x64.Build.0 = Debug|x64
+		{F23CF525-E2E5-4154-9F48-01830E14F34E}.Debug|x86.ActiveCfg = Debug|Win32
+		{F23CF525-E2E5-4154-9F48-01830E14F34E}.Debug|x86.Build.0 = Debug|Win32
+		{F23CF525-E2E5-4154-9F48-01830E14F34E}.Release|x64.ActiveCfg = Release|x64
+		{F23CF525-E2E5-4154-9F48-01830E14F34E}.Release|x64.Build.0 = Release|x64
+		{F23CF525-E2E5-4154-9F48-01830E14F34E}.Release|x86.ActiveCfg = Release|Win32
+		{F23CF525-E2E5-4154-9F48-01830E14F34E}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF755AA0-DF22-4B02-BE13-3719BD7DC2A9}
+	EndGlobalSection
+EndGlobal
