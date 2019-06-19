@@ -5,13 +5,12 @@ from conans import ConanFile, MSBuild, tools
 class TestVSConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     requires = "conan-vs-example/1.0@czoido/testing"
-
-    def source(self):
-        pass
+    generators = "visual_studio"
 
     def build(self):
         msbuild = MSBuild(self)
-        msbuild.build(os.path.join(self.source_folder, "test_package.sln"))
+        msbuild.build(os.path.join(self.source_folder, "test_package.sln"),
+                      property_file_name="conan_build.props")
 
     def imports(self):
         self.copy("*.dll", dst="bin", src="bin")
