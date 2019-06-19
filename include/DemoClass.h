@@ -2,16 +2,17 @@
 
 #include <string>
 
-
-#if defined(_MSC_VER)
-	#define SO_IMPORT __declspec(dllimport)
-	#define SO_EXPORT __declspec(dllexport)
+#ifdef _USRDLL
+	#define DLLEXPORT __declspec(dllexport)
 #else
-	#define SO_IMPORT
-	#define SO_EXPORT
+	#ifdef _LIB
+		#define DLLEXPORT
+	#else
+		#define DLLEXPORT __declspec(dllimport)
+	#endif
 #endif
 
-class SO_EXPORT DemoClass
+class DLLEXPORT DemoClass
 {
 public:
 	DemoClass();
