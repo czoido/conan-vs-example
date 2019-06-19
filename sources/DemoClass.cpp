@@ -1,4 +1,10 @@
-#include "../stdafx.h"
+
+#if!defined _USRDLL
+	#include "../static-lib/stdafx.h"
+#else
+	#include "../dynamic-lib/stdafx.h"
+#endif
+
 #include "../include/DemoClass.h"
 
 #include <iostream>
