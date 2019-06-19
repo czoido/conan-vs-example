@@ -43,7 +43,6 @@ class ConanvsexampleConan(ConanFile):
         elif self.settings.arch == "x86":
             self._lib_path = os.path.join(str(self.settings.build_type))
 
-        print(self._lib_path)
         self.copy("*.h", dst="include",
                   src=os.path.join(self._source_subfolder, "include"))
         self.copy("*.lib", dst="lib", src=self._lib_path, keep_path=False)

@@ -347,3 +347,10 @@ healthchecksdb
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
+test_package/build/882726301a296ee1f7f1d98a3db2003150ea70a8/lib/mydemolib.lib
+test_package/build/882726301a296ee1f7f1d98a3db2003150ea70a8/conan_build.props
+test_package/build/882726301a296ee1f7f1d98a3db2003150ea70a8/conan_imports_manifest.txt
+test_package/build/882726301a296ee1f7f1d98a3db2003150ea70a8/conanbuildinfo.txt
+test_package/build/882726301a296ee1f7f1d98a3db2003150ea70a8/conaninfo.txt
+test_package/build/882726301a296ee1f7f1d98a3db2003150ea70a8/graph_info.json
+test_package/build/882726301a296ee1f7f1d98a3db2003150ea70a8/lib/mydemodynlib.lib
