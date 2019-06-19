@@ -48,6 +48,7 @@ class ConanvsexampleConan(ConanFile):
                   src=os.path.join(self._source_subfolder, "include"))
         self.copy("*.lib", dst="lib", src=self._lib_path, keep_path=False)
         self.copy("*.dll", dst="bin", src=self._lib_path, keep_path=False)
+        self.copy("LICENSE", dst="licenses", src=self._source_subfolder, keep_path=False)
 
     def package_info(self):
         self.cpp_info.libs = ["mydemolib"]
