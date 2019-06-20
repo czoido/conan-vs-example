@@ -25,6 +25,9 @@ class ConanvsexampleConan(ConanFile):
     def configure(self):
         if self.settings.compiler == "Visual Studio":
             del self.options.fPIC
+        else:
+            raise ConanInvalidConfiguration(
+                "Library is only supported for Visual Studio")
 
     def source(self):
         git = tools.Git()
